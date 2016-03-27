@@ -31,6 +31,27 @@
             }
             return service.dilbert.entries[0];
         };
+        
+        service.initCalvinHobbes = function(){
+            return $http.jsonp('http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=50&callback=JSON_CALLBACK&q=http://www.comicsyndicate.org/Feed/Calvin%20and%20Hobbes').
+                then(function(response) {
+                    for (var i=0; i<response.data.responseData.feed.entries.length; i++) {
+                        response.data.responseData.feed.entries[i].content = 
+                            response.data.responseData.feed.entries[i].content.replace(/\'/g, "'").match(/<img.*?src="(.*?)"/)[1];
+                    } 
+                    return service.calvinhobbes = response.data.responseData.feed;
+            });
+        };
+
+        service.getCalvinHobbes = function(mode){
+            if (service.calvinhobbes == null) {
+                return null;
+            }
+            if (mode == 'random') {
+            	return service.calvinhobbes.entries[Math.floor(Math.random() * service.calvinhobbes.entries.length)];
+            }
+            return service.calvinhobbes.entries[0];
+        };
 
         return service;
     }
