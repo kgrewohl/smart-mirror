@@ -154,6 +154,11 @@
             		console.log("Dilbert comic initialized");
             	}, function(error) {
             		console.log(error);
+            	}
+            	ComicService.initCalvinHobbes().then(function(data) {
+            		console.log("Calvin & Hobbes comic initialized");
+            	}, function(error) {
+            		console.log(error);
             	});
             };
 
