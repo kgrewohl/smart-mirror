@@ -92,6 +92,11 @@
             "voice": "Show Dilbert (comic)",
             "description": "Show Dilbert comic."
         },
+        "image_comic_calvinhobbes": {
+            "text": "Show Calvin & Hobbes comic",
+            "voice": "Show Calvin and Hobbes (comic)",
+            "description": "Show Calvin & Hobbes comic."
+        },
         "reminder_insert": {
             "text": "Remind me to ________",
             "voice": "Remind me to *task",
