@@ -304,6 +304,13 @@
                 $scope.dilbert = ComicService.getDilbert("today");  // call it with "random" for random comic
                 $scope.focus = "dilbert";
             });
+            
+            // Show Calvin & Hobbes comic
+            addCommand('image_comic_calvinhobbes', function(state, action) {
+                console.debug("Fetching a Calvin & Hobbes comic for you.");
+                $scope.calvinhobbes = ComicService.getCalvinHobbes("today");  // call it with "random" for random comic
+                $scope.focus = "calvinhobbes";
+            });
 
             // Start timer
             addCommand('timer_start', function(duration) {
